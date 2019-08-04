@@ -6,13 +6,32 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>WLGS-IT</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='Assets/bootstrap-4.0.0/dist/css/bootstrap.min.css'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='Assets/bootstrap-4.0.0/dist/css/bootstrap.min.css'> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <!-- <script src='main.js'></script> -->
+    <style>
+    
+    .card-header{
+        padding: 0
+    }
+
+    .card{
+        height: 400px;
+    }
+
+    .cources{
+        width: 100%;
+        height: 180px;
+    }
+    
+    </style>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="#">WLGS-IT</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,8 +59,145 @@
     </nav>
 
     <div>
-        
+
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img width="100%" height="450"
+                        src="data:image/png;base64,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"
+                        alt="Los Angeles">
+                </div>
+                <div class="carousel-item">
+                    <img width="100%" height="450"
+                        src="http://thewebmind.org/wp-content/uploads/2017/03/webdesign-1.jpg" />"
+                </div>
+                <div class="carousel-item">
+                    <img width="100%" height="450"
+                        src="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2015/06/webdesign.jpg" alt="New York">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+
+        </div><!-- /.carousel -->
+
+        <div class="container mt-5">
+
+            <div class="row" style="height: 300px;">
+
+                <div class="col-md-6"><img src="Assets/Images/wliit.jpeg" width="100%" height="280"></div>
+                <div class="col-md-6"> </div>
+
+            </div>
+
+        </div><!-- /.container -->
+
+        <div class="jumbotron mt-5">
+
+            <div class="container">
+                <h1>Cources</h1>
+                <div class="row mt-5">
+
+                    <div class="col-md-3">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <img src="Assets/Images/web-development.png" class="cources" />
+                            </div><!-- /.card-header -->
+
+                            <div class="card-body">
+                                <h4>WEB DESIGNING</h4>
+                                <p>In Web Design course is ideal if you’ve always wanted to create your own website but lacked the skills or knowledge to do so.</p>
+                            </div><!-- /.card-body -->
+
+                        </div><!-- /.card -->
+
+                    </div><!-- /.col-md-3 -->
+
+                    <div class="col-md-3">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <img src="Assets/Images/graphic.jpg" class="cources" />
+                            </div><!-- /.card-header -->
+
+                            <div class="card-body">
+                                <h5>GRAPHICS DESIGNING</h5>
+                                <p>Graphic design is a creative process that reaches into everything we do these days from websites to application interfaces to ... <a href="#">Read more</a> </p>
+                            </div><!-- /.card-body -->
+
+                        </div><!-- /.card -->
+
+                    </div><!-- /.col-md-3 -->
+
+                    <div class="col-md-3">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <img src="Assets/Images/cit.png" class="cources" />
+                            </div><!-- /.card-header -->
+
+                            <div class="card-body">
+                                <h3>CIT</h3>
+                                <p>A best Certificate in Information Tehcnology (CIT) program for young students and professionals willing to start their career in IT ... <a href="#">Read more</a></p>
+                            </div><!-- /.card-body -->
+
+                        </div><!-- /.card -->
+
+                    </div><!-- /.col-md-3 -->
+
+                    <div class="col-md-3">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <img src="Assets/Images/dit.jpg" class="cources" />
+                            </div><!-- /.card-header -->
+
+                            <div class="card-body">
+                                <h3>DIT</h3>
+                                <p>Diploma Information Technology (DIT) program accredited with Sindh Board of Technical Education SBTE specially designed ... <a href="#">Read more</a></p>
+                            </div><!-- /.card-body -->
+
+                        </div><!-- /.card -->
+
+                    </div><!-- /.col-md-3 -->
+
+                </div><!--  -->
+
+            </div><!-- /.container -->
+
+        </div><!-- /.jumbotron -->
+
+
+
+
     </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
 </body>
 
